@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ComponentProfile from './Profile/Profil';
+import nature from './nature.jpg'
 
 function App() {
+  let fullname ='Makrem Ellouze';
+  const handleName =()=>{
+    alert ("Hello "+fullname);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div style={{color: "red" , textAlign: "center"}} >
+      <ComponentProfile handleName = {handleName} fullname = {fullname} bio = "Produit" profession = "Developpeur Front-end" />
+      <div style={{display: "block" , margin: "20px auto"}}><img src ={nature} alt=''/></div>
     </div>
+    </>
   );
 }
 
